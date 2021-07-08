@@ -1,0 +1,1065 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container ">
+  <div class="row justify-content-center ">
+     <div class = 'myclass col-md-6'>
+        <form id = 'questionnaire' class = 'mt-3',action = '',method = "">
+          {% csrf_token %}
+          <div class = 'step  page active ' id = 'step1'>
+              <!--<div class = 'page'>-->
+              <label for="age" class="form-label"><h4>How old are you?</h4></label>
+              <input type="number" class="form-control" id="ag" name="age" placeholder="Enter your age">
+              
+          <div>
+          <button type="button" class="next-btn">Next</button>
+          </div>
+      </div>
+            <div class = 'step  page' id = 'step2' ><h4>What is your gender?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "gender" value="male" id="male">
+                  <label class="form-check-label" for="male">
+                    male
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "gender" value="female" id="female">
+                  <label class="form-check-label" for="female">
+                    female
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "gender" value="others" id="other">
+                  <label class="form-check-label" for="other">
+                    others
+                  </label>
+                </div>
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+
+          <div class = 'step page' id = 'step3'><h4>Do you have a family history of mental illness?</h4>
+              <div class="form form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "family_history" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "family_history" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+
+            <div class = 'step  page' id = 'step4'><h4>Do you think mental health condition interferes with your work?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="work_interfere" value="often" id="often">
+                  <label class="form-check-label" for="often">
+                    often
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="work_interfere" value="rarely" id="rarely">
+                  <label class="form-check-label" for="rarely">
+                    rarely
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="work_interfere" value="sometimes" id="sometimes">
+                  <label class="form-check-label" for="sometimes">
+                    sometimes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="work_interfere" value="never" id="never">
+                  <label class="form-check-label" for="never">
+                    never
+                  </label>
+                </div>
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id = 'step5'><h4>Does your employer provide health benefits?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="benefits" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "benefits" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name ="benefits" value="don't know" id="don't know">
+                  <label class="form-check-label" for="don't know">
+                    don't know
+                  </label>
+                </div>
+                  <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step page' id = 'step6'><h4>Do you know the options for mental health care your employer provides?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "care_options" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "care_options" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "care_options" value="not sure" id="not sure">
+                  <label class="form-check-label" for="not sure">
+                    not sure
+                  </label>
+                </div>
+                
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+              </div>
+            
+            <div class = 'step  page' id = 'step7'><h4>Has your employer discussed mental health as part of an employee wellness program?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name ="wellness_program" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name ="wellness_program" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name ="wellness_program" value="don't know" id="don't know">
+                  <label class="form-check-label" for="don't know">
+                    don't know
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id= 'step8'><h4>Does your employer provide resources to learn more about mental health issues and how to seek help?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="seek_help" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="seek_help" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="seek_help" value="don't know" id="don't know">
+                  <label class="form-check-label" for="don't know">
+                    don't know
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id = 'step9'><h4>Is your anonymity protected if you choose to take advantage of mental health or substance abuse treatment resources?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="anonimity" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="anonimity" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="anonimity" value="don't know" id="don't know">
+                  <label class="form-check-label" for="don't know">
+                    don't know
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step page' id = 'step10'><h4>How easy is it for you to take medical leave for mental health conditions?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "leave" value="somewhat easy" id="se">
+                  <label class="form-check-label" for="se">
+                    somewhat easy
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "leave" value="don't know" id="dk">
+                  <label class="form-check-label" for="dk">
+                    don't know
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "leave" value="somewhat difficult" id="sd">
+                  <label class="form-check-label" for="sd">
+                    somewhat difficult
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "leave" value="very difficult" id="vd">
+                  <label class="form-check-label" for="vd">
+                    very difficult
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "leave" value="very easy" id="ve">
+                  <label class="form-check-label" for="ve">
+                    very easy
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id = 'step11'><h4>Do you think discussing mental health issue with your employer would have negative consequences?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "mental_health_consequence" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "mental_health_consequence" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "mental_health_consequence" value="maybe" id="may be">
+                  <label class="form-check-label" for="may be">
+                    may be
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id = 'step12'><h4>Would you be willing to discuss mental health issues with your coworkers?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="coworkers" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="coworkers" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="coworkers" value="some of them" id="som">
+                  <label class="form-check-label" for="som">
+                    some of them
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id = 'step13'><h4>Would you bring a mental health issue with a potential employer in an interview?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name='mental_health_interview' value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name='mental_health_interview' value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name='mental_health_interview' value="maybe" id="maybe">
+                  <label class="form-check-label" for="maybe">
+                    maybe
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step page' id = 'step14'><h4>Do you feel that your employer takes mental health seriously as physical health?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="mental_vs_physical" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="mental_vs_physical" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="mental_vs_physical" value="maybe" id="maybe">
+                  <label class="form-check-label" for="maybe">
+                    maybe
+                  </label>
+                </div>
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step  page' id='step15'><h4>Have you heard of or observed negative consequences for coworkers with mental health conditions in your work place?</h4>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="obs_consequence" value="yes" id="yes">
+                  <label class="form-check-label" for="yes">
+                    yes
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name="obs_consequence" value="no" id="no">
+                  <label class="form-check-label" for="no">
+                    no
+                  </label>
+                </div>
+                
+                
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+                </div>
+            </div>
+            <div class = 'step page' id = 'step16'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+              <h4>I feel downhearted,blue and sad</h4></p>
+              <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "down" value=1 id="do1">
+                  <label class="form-check-label" for="do">
+                    None OR a little of the time
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "down" value=2 id="do2">
+                  <label class="form-check-label" for="d02">
+                    Some of the time
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "down" value=3 id="do3">
+                  <label class="form-check-label" for="do3">
+                    Good part of the time
+                  </label>
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="radio" name = "down" value= 4 id="do4">
+                  <label class="form-check-label" for="do4">
+                    Most OR all of the time
+                  </label>
+                </div>
+                <div>
+                  <button type="button" class="previous-btn">Prev</button>
+                  <button type="button" class="next-btn">Next</button>
+
+          
+                </div>
+              </div>
+              <div class = 'step page' id = 'step17'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                <h4>Morning is when I feel best</h4></p>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name = "best" value=4 id="be1">
+                    <label class="form-check-label" for="be1">
+                      None OR a little of the time
+                    </label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name = "best" value=3 id="be2">
+                    <label class="form-check-label" for="be2">
+                      Some of the time
+                    </label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name = "best" value=2 id="be3">
+                    <label class="form-check-label" for="be3">
+                      Good part of the time
+                    </label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name = "best" value=1 id="be4">
+                    <label class="form-check-label" for="do4">
+                      Most OR all of the time
+                    </label>
+                  </div>
+                  <div>
+                    <button type="button" class="previous-btn">Prev</button>
+                    <button type="button" class="next-btn">Next</button>
+  
+            
+                  </div>
+                </div>
+                <div class = 'step page' id = 'step18'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                  <h4>I have crying spells or I feel like it  </h4></p>
+                  <div class="form-check mb-3">
+                      <input class="form-check-input" type="radio" name = "cry" value=1 id="cry1">
+                      <label class="form-check-label" for="cry1">
+                        None OR a little of the time
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="radio" name = "cry" value=2 id="cry2">
+                      <label class="form-check-label" for="cry2">
+                        Some of the time
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="radio" name = "cry" value=3 id="cry3">
+                      <label class="form-check-label" for="cry3">
+                        Good part of the time
+                      </label>
+                    </div>
+                    <div class="form-check mb-3">
+                      <input class="form-check-input" type="radio" name = "cry" value= 4 id="cry4">
+                      <label class="form-check-label" for="cry4">
+                        Most OR all of the time
+                      </label>
+                    </div>
+                    <div>
+                      <button type="button" class="previous-btn">Prev</button>
+                      <button type="button" class="next-btn">Next</button>
+    
+              
+                    </div>
+                  </div>
+                  <div class = 'step page' id = 'step19'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                    <h4>I have trouble sleeping through the night</h4></p>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name = "sleep" value=1 id="sle1">
+                        <label class="form-check-label" for="sle1">
+                          None OR a little of the time
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name = "sleep" value=2 id="sle2">
+                        <label class="form-check-label" for="sle2">
+                          Some of the time
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name = "sleep" value=3 id="sle3">
+                        <label class="form-check-label" for="sle3">
+                          Good part of the time
+                        </label>
+                      </div>
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name = "sleep" value= 4 id="sle4">
+                        <label class="form-check-label" for="sle4">
+                          Most OR all of the time
+                        </label>
+                      </div>
+                      <div>
+                        <button type="button" class="previous-btn">Prev</button>
+                        <button type="button" class="next-btn">Next</button>
+      
+                
+                      </div>
+                    </div>
+                    <div class = 'step page' id = 'step20'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                      <h4>I eat as much as I used to</h4></p>
+                      <div class="form-check mb-3">
+                          <input class="form-check-input" type="radio" name = "eat" value=4 id="eat1">
+                          <label class="form-check-label" for="eat2">
+                            None OR a little of the time
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="radio" name = "eat" value=3 id="eat2">
+                          <label class="form-check-label" for="eat2">
+                            Some of the time
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="radio" name = "eat" value=2 id="eat3">
+                          <label class="form-check-label" for="eat3">
+                            Good part of the time
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input class="form-check-input" type="radio" name = "eat" value= 1 id="eat4">
+                          <label class="form-check-label" for="eat4">
+                            Most OR all of the time
+                          </label>
+                        </div>
+                        <div>
+                          <button type="button" class="previous-btn">Prev</button>
+                          <button type="button" class="next-btn">Next</button>
+        
+                  
+                        </div>
+                      </div>
+                      <div class = 'step page' id = 'step21'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                        <h4>I enjoy looking at,talking to and being with attractive women/men</h4></p>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name = "look" value=4 id="lo1">
+                            <label class="form-check-label" for="lo1">
+                              None OR a little of the time
+                            </label>
+                          </div>
+                          <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name = "look" value=3 id="lo2">
+                            <label class="form-check-label" for="l02">
+                              Some of the time
+                            </label>
+                          </div>
+                          <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name = "look" value=2 id="lo3">
+                            <label class="form-check-label" for="lo3">
+                              Good part of the time
+                            </label>
+                          </div>
+                          <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name = "look" value= 1 id="lo4">
+                            <label class="form-check-label" for="lo4">
+                              Most OR all of the time
+                            </label>
+                          </div>
+                          <div>
+                            <button type="button" class="previous-btn">Prev</button>
+                            <button type="button" class="next-btn">Next</button>
+          
+                    
+                          </div>
+                        </div>
+                        <div class = 'step page' id = 'step22'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                          <h4>I notice that I am losing weight</h4></p>
+                          <div class="form-check mb-3">
+                              <input class="form-check-input" type="radio" name = "weight" value=1 id="we1">
+                              <label class="form-check-label" for="we1">
+                                None OR a little of the time
+                              </label>
+                            </div>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input" type="radio" name = "weight" value=2 id="we2">
+                              <label class="form-check-label" for="we2">
+                                Some of the time
+                              </label>
+                            </div>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input" type="radio" name = "weight" value=3 id="we3">
+                              <label class="form-check-label" for="we3">
+                                Good part of the time
+                              </label>
+                            </div>
+                            <div class="form-check mb-3">
+                              <input class="form-check-input" type="radio" name = "weight" value= 4 id="we4">
+                              <label class="form-check-label" for="we4">
+                                Most OR all of the time
+                              </label>
+                            </div>
+                            <div>
+                              <button type="button" class="previous-btn">Prev</button>
+                              <button type="button" class="next-btn">Next</button>
+            
+                      
+                            </div>
+                          </div>
+                          <div class = 'step page' id = 'step23'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                            <h4>My heart beats faster than usual</h4></p>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name = "heart" value=1 id="he1">
+                                <label class="form-check-label" for="he1">
+                                  None OR a little of the time
+                                </label>
+                              </div>
+                              <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name = "heart" value=2 id="he2">
+                                <label class="form-check-label" for="he2">
+                                  Some of the time
+                                </label>
+                              </div>
+                              <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name = "heart" value=3 id="he3">
+                                <label class="form-check-label" for="he3">
+                                  Good part of the time
+                                </label>
+                              </div>
+                              <div class="form-check mb-3">
+                                <input class="form-check-input" type="radio" name = "heart" value= 4 id="he4">
+                                <label class="form-check-label" for="he4">
+                                  Most OR all of the time
+                                </label>
+                              </div>
+                              <div>
+                                <button type="button" class="previous-btn">Prev</button>
+                                <button type="button" class="next-btn">Next</button>
+              
+                        
+                              </div>
+                            </div>
+                            <div class = 'step page' id = 'step24'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                              <h4>I have trouble with constipation</h4></p>
+                              <div class="form-check mb-3">
+                                  <input class="form-check-input" type="radio" name = "constipation" value=1 id="cons1">
+                                  <label class="form-check-label" for="cons1">
+                                    None OR a little of the time
+                                  </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                  <input class="form-check-input" type="radio" name = "constipation" value=2 id="cons2">
+                                  <label class="form-check-label" for="cons2">
+                                    Some of the time
+                                  </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                  <input class="form-check-input" type="radio" name = "constipation" value=3 id="cons3">
+                                  <label class="form-check-label" for="cons3">
+                                    Good part of the time
+                                  </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                  <input class="form-check-input" type="radio" name = "constipation" value= 4 id="cons4">
+                                  <label class="form-check-label" for="cons4">
+                                    Most OR all of the time
+                                  </label>
+                                </div>
+                                <div>
+                                  <button type="button" class="previous-btn">Prev</button>
+                                  <button type="button" class="next-btn">Next</button>
+                
+                          
+                                </div>
+                              </div>
+                              <div class = 'step page' id = 'step25'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                <h4>I get tired for no reason</h4></p>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name = "tired" value=1 id="ti1">
+                                    <label class="form-check-label" for="ti">
+                                      None OR a little of the time
+                                    </label>
+                                  </div>
+                                  <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name = "tired" value=2 id="t12">
+                                    <label class="form-check-label" for="ti2">
+                                      Some of the time
+                                    </label>
+                                  </div>
+                                  <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name = "tired" value=3 id="ti3">
+                                    <label class="form-check-label" for="ti3">
+                                      Good part of the time
+                                    </label>
+                                  </div>
+                                  <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name = "tired" value= 4 id="ti">
+                                    <label class="form-check-label" for="ti4">
+                                      Most OR all of the time
+                                    </label>
+                                  </div>
+                                  <div>
+                                    <button type="button" class="previous-btn">Prev</button>
+                                    <button type="button" class="next-btn">Next</button>
+                  
+                            
+                                  </div>
+                                </div>
+                                <div class = 'step page' id = 'step26'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                  <h4>My mind is as clear as it used to be </h4></p>
+                                  <div class="form-check mb-3">
+                                      <input class="form-check-input" type="radio" name = "clear" value=4 id="cle1">
+                                      <label class="form-check-label" for="cle1">
+                                        None OR a little of the time
+                                      </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                      <input class="form-check-input" type="radio" name = "clear" value=3 id="cle2">
+                                      <label class="form-check-label" for="cle2">
+                                        Some of the time
+                                      </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                      <input class="form-check-input" type="radio" name = "clear" value=2 id="cle3">
+                                      <label class="form-check-label" for="cle3">
+                                        Good part of the time
+                                      </label>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                      <input class="form-check-input" type="radio" name = "clear" value= 1 id="cle4">
+                                      <label class="form-check-label" for="cle4">
+                                        Most OR all of the time
+                                      </label>
+                                    </div>
+                                    <div>
+                                      <button type="button" class="previous-btn">Prev</button>
+                                      <button type="button" class="next-btn">Next</button>
+                    
+                              
+                                    </div>
+                                  </div>
+                                  <div class = 'step page' id = 'step27'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                    <h4>I find it easy to do the things I used to do</h4></p>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name = "easy" value=4 id="ea1">
+                                        <label class="form-check-label" for="ea1">
+                                          None OR a little of the time
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name = "easy" value=3 id="ea2">
+                                        <label class="form-check-label" for="ea2">
+                                          Some of the time
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name = "easy" value=2 id="ea3">
+                                        <label class="form-check-label" for="ea3">
+                                          Good part of the time
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name = "easy" value= 1 id="ea4">
+                                        <label class="form-check-label" for="ea4">
+                                          Most OR all of the time
+                                        </label>
+                                      </div>
+                                      <div>
+                                        <button type="button" class="previous-btn">Prev</button>
+                                        <button type="button" class="next-btn">Next</button>
+                      
+                                
+                                      </div>
+                                    </div>
+                                    <div class = 'step page' id = 'step27'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                      <h4>I am restless and can't keep still</h4></p>
+                                      <div class="form-check mb-3">
+                                          <input class="form-check-input" type="radio" name = "still" value=1 id="sti1">
+                                          <label class="form-check-label" for="sti1">
+                                            None OR a little of the time
+                                          </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                          <input class="form-check-input" type="radio" name = "still" value=2 id="sti2">
+                                          <label class="form-check-label" for="sti2">
+                                            Some of the time
+                                          </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                          <input class="form-check-input" type="radio" name = "still" value=3 id="sti3">
+                                          <label class="form-check-label" for="sti3">
+                                            Good part of the time
+                                          </label>
+                                        </div>
+                                        <div class="form-check mb-3">
+                                          <input class="form-check-input" type="radio" name = "still" value= 4 id="sti4">
+                                          <label class="form-check-label" for="sti4">
+                                            Most OR all of the time
+                                          </label>
+                                        </div>
+                                        <div>
+                                          <button type="button" class="previous-btn">Prev</button>
+                                          <button type="button" class="next-btn">Next</button>
+                        
+                                  
+                                        </div>
+                                      </div>
+                                      <div class = 'step page' id = 'step28'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                        <h4>I feel hopeful about the future</h4></p>
+                                        <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name = "future" value=4 id="fut1">
+                                            <label class="form-check-label" for="fut1">
+                                              None OR a little of the time
+                                            </label>
+                                          </div>
+                                          <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name = "future" value=3 id="fut2">
+                                            <label class="form-check-label" for="fut2">
+                                              Some of the time
+                                            </label>
+                                          </div>
+                                          <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name = "future" value=2 id="fut3">
+                                            <label class="form-check-label" for="fut3">
+                                              Good part of the time
+                                            </label>
+                                          </div>
+                                          <div class="form-check mb-3">
+                                            <input class="form-check-input" type="radio" name = "future" value= 1 id="fut4">
+                                            <label class="form-check-label" for="fut4">
+                                              Most OR all of the time
+                                            </label>
+                                          </div>
+                                          <div>
+                                            <button type="button" class="previous-btn">Prev</button>
+                                            <button type="button" class="next-btn">Next</button>
+                          
+                                    
+                                          </div>
+                                        </div>
+                                        <div class = 'step page' id = 'step29'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                          <h4>I am more irritable than usual</h4></p>
+                                          <div class="form-check mb-3">
+                                              <input class="form-check-input" type="radio" name = "irritable" value=1 id="irr1">
+                                              <label class="form-check-label" for="irr2">
+                                                None OR a little of the time
+                                              </label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                              <input class="form-check-input" type="radio" name = "irritable" value=2 id="irr2">
+                                              <label class="form-check-label" for="irr2">
+                                                Some of the time
+                                              </label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                              <input class="form-check-input" type="radio" name = "irritable" value=3 id="irr3">
+                                              <label class="form-check-label" for="irr3">
+                                                Good part of the time
+                                              </label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                              <input class="form-check-input" type="radio" name = "irritable" value= 4 id="irr4">
+                                              <label class="form-check-label" for="irr4">
+                                                Most OR all of the time
+                                              </label>
+                                            </div>
+                                            <div>
+                                              <button type="button" class="previous-btn">Prev</button>
+                                              <button type="button" class="next-btn">Next</button>
+                            
+                                      
+                                            </div>
+                                          </div>
+                                          <div class = 'step page' id = 'step30'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                            <h4>I find it easy to make a decision</h4></p>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name = "decision" value=4 id="de1">
+                                                <label class="form-check-label" for="de1">
+                                                  None OR a little of the time
+                                                </label>
+                                              </div>
+                                              <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name = "decision" value=3 id="de2">
+                                                <label class="form-check-label" for="de2">
+                                                  Some of the time
+                                                </label>
+                                              </div>
+                                              <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name = "decision" value=2 id="de3">
+                                                <label class="form-check-label" for="de3">
+                                                  Good part of the time
+                                                </label>
+                                              </div>
+                                              <div class="form-check mb-3">
+                                                <input class="form-check-input" type="radio" name = "decision" value= 1 id="de1">
+                                                <label class="form-check-label" for="de1">
+                                                  Most OR all of the time
+                                                </label>
+                                              </div>
+                                              <div>
+                                                <button type="button" class="previous-btn">Prev</button>
+                                                <button type="button" class="next-btn">Next</button>
+                              
+                                        
+                                              </div>
+                                            </div>
+                                            <div class = 'step page' id = 'step31'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                              <h4>I feel am useful and needed</h4></p>
+                                              <div class="form-check mb-3">
+                                                  <input class="form-check-input" type="radio" name = "need" value=4 id="fe1">
+                                                  <label class="form-check-label" for="fe1">
+                                                    None OR a little of the time
+                                                  </label>
+                                                </div>
+                                                <div class="form-check mb-3">
+                                                  <input class="form-check-input" type="radio" name = "need" value=3 id="fe2">
+                                                  <label class="form-check-label" for="fe2">
+                                                    Some of the time
+                                                  </label>
+                                                </div>
+                                                <div class="form-check mb-3">
+                                                  <input class="form-check-input" type="radio" name = "need" value=2 id="fe3">
+                                                  <label class="form-check-label" for="fe3">
+                                                    Good part of the time
+                                                  </label>
+                                                </div>
+                                                <div class="form-check mb-3">
+                                                  <input class="form-check-input" type="radio" name = "need" value= 1 id="fe4">
+                                                  <label class="form-check-label" for="fe4">
+                                                    Most OR all of the time
+                                                  </label>
+                                                </div>
+                                                <div>
+                                                  <button type="button" class="previous-btn">Prev</button>
+                                                  <button type="button" class="next-btn">Next</button>
+                                
+                                          
+                                                </div>
+                                              </div>
+                                              <div class = 'step page' id = 'step32'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                                <h4>My life is pretty full</h4></p>
+                                                <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name = "full" value=4 id="fu1">
+                                                    <label class="form-check-label" for="fu1">
+                                                      None OR a little of the time
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name = "full" value=3 id="fu2">
+                                                    <label class="form-check-label" for="fu2">
+                                                      Some of the time
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name = "full" value=2 id="fu3">
+                                                    <label class="form-check-label" for="fu3">
+                                                      Good part of the time
+                                                    </label>
+                                                  </div>
+                                                  <div class="form-check mb-3">
+                                                    <input class="form-check-input" type="radio" name = "full" value= 1 id="fu4">
+                                                    <label class="form-check-label" for="fu4">
+                                                      Most OR all of the time
+                                                    </label>
+                                                  </div>
+                                                  <div>
+                                                    <button type="button" class="previous-btn">Prev</button>
+                                                    <button type="button" class="next-btn">Next</button>
+                                  
+                                            
+                                                  </div>
+                                                </div>
+                                                <div class = 'step page' id = 'step33'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                                  <h4>I feel others would be better off if I were dead</h4></p>
+                                                  <div class="form-check mb-3">
+                                                      <input class="form-check-input" type="radio" name = "better" value=1 id="bet1">
+                                                      <label class="form-check-label" for="bet1">
+                                                        None OR a little of the time
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                      <input class="form-check-input" type="radio" name = "better" value=2 id="bet2">
+                                                      <label class="form-check-label" for="bet2">
+                                                        Some of the time
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                      <input class="form-check-input" type="radio" name = "better" value=3 id="bet3">
+                                                      <label class="form-check-label" for="bet3">
+                                                        Good part of the time
+                                                      </label>
+                                                    </div>
+                                                    <div class="form-check mb-3">
+                                                      <input class="form-check-input" type="radio" name = "better" value= 4 id="bet4">
+                                                      <label class="form-check-label" for="bet4">
+                                                        Most OR all of the time
+                                                      </label>
+                                                    </div>
+                                                    <div>
+                                                      <button type="button" class="previous-btn">Prev</button>
+                                                      <button type="button" class="next-btn">Next</button>
+                                    
+                                              
+                                                    </div>
+                                                  </div>
+                                                  <div class = 'step page' id = 'step34'><p>Over the past two weeks,how often have you been bothered by the following problems:<br>
+                                                    <h4>I still enjoy the things I used to do</h4></p>
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="radio" name = "things" value=4 id="th1">
+                                                        <label class="form-check-label" for="th1">
+                                                          None OR a little of the time
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="radio" name = "things" value=3 id="th2">
+                                                        <label class="form-check-label" for="th2">
+                                                          Some of the time
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="radio" name = "things" value=2 id="th3">
+                                                        <label class="form-check-label" for="th3">
+                                                          Good part of the time
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="radio" name = "things" value= 1 id="th4">
+                                                        <label class="form-check-label" for="th4">
+                                                          Most OR all of the time
+                                                        </label>
+                                                      </div>
+                                                      <div>
+                                                        <button type="button" class="previous-btn">Prev</button>
+                                                        <button type="submit" class="submit-btn" >Submit</button>
+                                      
+                                                
+                                                      </div>
+                                                    </div>
+            
+
+        </form>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- <script type='text/javascript'>
+    
+  
+  </script> -->
+   
+
+{% endblock%}

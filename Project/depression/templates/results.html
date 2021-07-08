@@ -1,0 +1,353 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+  <title>Mental health</title>
+
+  <link rel="stylesheet"  href="{% static  'app/css/main.css'  %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+</head>
+<body>
+  <br>
+  <div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">PendaCare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            
+          </div>
+        </nav>
+  </div>
+  <br>
+
+  <div class="container ">
+    <div class="row justify-content-center ">
+       <div class = 'myclass col-md-6'>
+         <h4>Test Results:</h4><br>
+         
+         {%if result == '1' %}
+           {%if index < '50'%}
+         <div>
+           <h5>Your Results</h5><br>
+           <p>From the questionnaire that you have completed,it appears that you would seek treatment 
+             when faced with a mental health issue especially depression which is a good thing.Seeking medical support
+             for depression is the best favour you would do to yourself.Depending on the level of depression,self help and
+             and psychological therapies/talking therapies would work.In extreme cases psychological therapies and anti-depressant drugs
+             would be administered.
+           </p>
+           <p>
+           Your score is {{index}}.This shows that you are within normal range,no talking therapies needed just
+           self-help.Here are some tips:
+           <ul>
+             <li>Increase your physical activity and get some fresh air and sunlight everyday</li>
+             <li>When things seem really hard, take them one step at a time</li>
+             <li>Understand when you need to stop – don’t be hard on yourself.</li>
+             <li>Too much alcohol, recreational or party drugs can make depression worse.</li>
+             <li>If you can’t sleep, get up and go into another
+             room and watch TV or read until you feel
+             sleepy again. Don’t stay in bed worrying that
+             you can’t sleep</li>
+             <li>Do relaxing things before bedtime.</li>
+             <li>Planning your day well and rewarding yourself after achieving your plans is also advisable.</li>
+           </ul>
+           Here is a table showing various levels of depression and the best action:
+           </p>
+         </div>
+         <table>
+           <thead>
+             <tr>
+              <th>Score</th>
+               <th>Level of depression</th>
+               <th>Best Action</th>
+             </tr>
+
+           </thead>
+           <tbody>
+               <tr>
+                 <td>Below 50</td>
+                 <td>Normal range</td>
+                 <td>Self help</td>
+               </tr>
+               <tr>
+                <td>Between 50 and 59</td>
+                <td>Mild depression</td>
+                <td>Self help and psychological therapies</td>
+              </tr>
+              <tr>
+                <td>Between 60 and 69</td>
+                <td>Moderate depression</td>
+                <td>psychological therapies and anti-depressant drugs</td>
+              </tr>
+              <tr>
+                <td>Over 70</td>
+                <td>Severe depression</td>
+                <td>Anti-depressant drugs and may be some psychological therapies</td>
+              </tr>
+           </tbody>
+         </table>
+         {%endif%}
+         {% endif %} 
+         {%if result == '1' %}
+           {%if index >= '50' and index <= '59'%}
+         <div>
+           <h5>Your Results</h5><br>
+           <p>From the questionnaire that you have completed,it appears that you would seek treatment 
+            when faced with a mental health issue especially depression which is a good thing.Seeking medical support
+            for depression is the best favour you would do to yourself.Depending on the level of depression,self help and
+            and psychological therapies/talking therapies would work.In extreme cases psychological therapies and anti-depressant drugs
+            would be administered.
+            <p>
+              Your score is {{index}}.This exhibits presence of minimal to mild depression.For mild depression, self-help and psychological
+              therapies are helpful.Psychological therapies include counselling therapies and other therapies that target depression.
+              You should notice an improvement after about 1-2 weeks of treatment.
+              Here are some  self-help tips:
+              <ul>
+                <li>Increase your physical activity and get some fresh air and sunlight everyday</li>
+                <li>When things seem really hard, take them one step at a time</li>
+                <li>Understand when you need to stop – don’t be hard on yourself.</li>
+                <li>Too much alcohol, recreational or party drugs can make depression worse.</li>
+                <li>If you can’t sleep, get up and go into another
+                room and watch TV or read until you feel
+                sleepy again. Don’t stay in bed worrying that
+                you can’t sleep</li>
+                <li>Do relaxing things before bedtime.</li>
+                <li>Planning your day well and rewarding yourself after achieving your plans is also advisable.</li>
+              </ul>
+              Here is a table showing various levels of depression and the best action:
+              </p>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                 <th>Score</th>
+                  <th>Level of depression</th>
+                  <th>Best Action</th>
+                </tr>
+   
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Below 50</td>
+                    <td>Normal range</td>
+                    <td>Self help</td>
+                  </tr>
+                  <tr>
+                   <td>Between 50 and 59</td>
+                   <td>Mild depression</td>
+                   <td>Self help and psychological therapies</td>
+                 </tr>
+                 <tr>
+                   <td>Between 60 and 69</td>
+                   <td>Moderate depression</td>
+                   <td>psychological therapies and anti-depressant drugs</td>
+                 </tr>
+                 <tr>
+                   <td>Over 70</td>
+                   <td>Severe depression</td>
+                   <td>Anti-depressant drugs and may be some psychological therapies</td>
+                 </tr>
+              </tbody>
+            </table>
+         {%endif%}
+         {% endif %} 
+         {%if result == '1' %}
+           {%if index >= '60' and index <= '69'%}
+         <div>
+          <h5>Your Results</h5><br>
+          <p>From the questionnaire that you have completed,it appears that you would seek treatment 
+           when faced with a mental health issue especially depression which is a good thing.Seeking medical support
+           for depression is the best favour you would do to yourself.Depending on the level of depression,self help and
+           and psychological therapies/talking therapies would work.In extreme cases psychological therapies and anti-depressant drugs
+           would be administered.</p>
+          <p>
+             Your score is {{index}}.This exhibits severe depression.For moderate depression, psychological
+             therapies and antidepressant drugs both work equally well.Examples of those therapies may include,
+             problem-solving therapy,interpersonal therapy and behavioural therapy.If you are prescribed an antidepressant drug,
+             your doctor will explain:</p>
+             <ul>
+               <li>what symptoms the drug should help with</li>
+               <li>how long it will take to work</li>
+               <li>how long you will need to take it</li>
+               <li>possible side effects.</li>
+             </ul>
+             Ask for this information in writing.
+             Here is a table showing various levels of depression and the best action:
+             <table>
+              <thead>
+                <tr>
+                 <th>Score</th>
+                  <th>Level of depression</th>
+                  <th>Best Action</th>
+                </tr>
+   
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Below 50</td>
+                    <td>Normal range</td>
+                    <td>Self help</td>
+                  </tr>
+                  <tr>
+                   <td>Between 50 and 59</td>
+                   <td>Mild depression</td>
+                   <td>Self help and psychological therapies</td>
+                 </tr>
+                 <tr>
+                   <td>Between 60 and 69</td>
+                   <td>Moderate depression</td>
+                   <td>psychological therapies and anti-depressant drugs</td>
+                 </tr>
+                 <tr>
+                   <td>Over 70</td>
+                   <td>Severe depression</td>
+                   <td>Anti-depressant drugs and may be some psychological therapies</td>
+                 </tr>
+              </tbody>
+            </table>
+         {%endif%}
+         {% endif %} 
+         {%if result == '1' %}
+         {%if index >= '70' %}
+    
+        <div>
+          <h5>Your Results</h5><br>
+          <p>From the questionnaire that you have completed,it appears that you would seek treatment 
+           when faced with a mental health issue especially depression which is a good thing.Seeking medical support
+           for depression is the best favour you would do to yourself.Depending on the level of depression,self help and
+           and psychological therapies/talking therapies would work.In extreme cases psychological therapies and anti-depressant drugs
+           would be administered.</p>
+          <p>
+             Your score is {{index}}.This exhibits severe depression.Roughly half of those who
+             have a single untreated episode of major depression will go on to have another.The second untreated episode
+            boosts the odds of a third.Therefore, treatment should aim for maximum relief.
+            Here are some other strategies worth considering in the search for a lasting, full recovery:</p>
+             <ul>
+               <li>switching to a different antidepressant if the first one
+                is not adequately effective</li>
+               <li>combining two antidepressants that have different
+                mechanisms of action</li>
+               <li>adding a second drug (not primarily an antidepressant) that may augment the effect of the antidepressant
+                 you’re taking</li>
+               <li>combining medications and therapy.</li>
+             </ul>
+            <p> Most psychiatrists will recommend that you stay on your medication for about a year after a first
+                episode of depression. If you have had several episodes, your doctor will probably recommend maintenance
+                treatment indefinitely.</p>
+                Here is a table showing various levels of depression and the best action:
+             <table>
+              <thead>
+                <tr>
+                 <th>Score</th>
+                  <th>Level of depression</th>
+                  <th>Best Action</th>
+                </tr>
+   
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Below 50</td>
+                    <td>Normal range</td>
+                    <td>Self help</td>
+                  </tr>
+                  <tr>
+                   <td>Between 50 and 59</td>
+                   <td>Mild depression</td>
+                   <td>Self help and psychological therapies</td>
+                 </tr>
+                 <tr>
+                   <td>Between 60 and 69</td>
+                   <td>Moderate depression</td>
+                   <td>psychological therapies and anti-depressant drugs</td>
+                 </tr>
+                 <tr>
+                   <td>Over 70</td>
+                   <td>Severe depression</td>
+                   <td>Anti-depressant drugs and may be some psychological therapies</td>
+                 </tr>
+              </tbody>
+            </table>
+            </div>
+       {%endif%}
+       {% endif %} 
+       {%if result == '0' %}
+       {%if index < '50' %}
+     <div>
+       <h5>Model Results</h5><br>
+       <p>From the questionnaire you have completed,our model shows that you would not look for treatment 
+         when faced with a mental health issue.Mental health issues especially depression is a treatable condition
+         with an excellrnt treatment rate especially in this century.We understand when in this situationasking for
+         help can be a tedious task.First step which is the hardest is to talk.Seek help from a therapist,a friend
+         or any other mental organization around you.You are also advised to avoid isolation,exercise regularly,
+         hold of from making big decisions and talk to people and things will be better with time.  
+       </p>
+       <h5>Your score was {{index}}</h5>
+       Your score suggests minimal or no symptoms of depression.You are within normal range.
+     </div>
+     {%endif%}
+     {% endif %} 
+     {%if result == '0' %}
+       {%if index >= '50' and index <= '59' %}
+     <div>
+       <h5>Model Results</h5><br>
+       <p>From the questionnaire you have completed,our model shows that you would not look for treatment 
+         when faced with a mental health issue.Mental health issues especially depression is a treatable condition
+         with an excellrnt treatment rate especially in this century.We understand when in this situationasking for
+         help can be a tedious task.First step which is the hardest is to talk.Seek help from a therapist,a friend
+         or any other mental organization around you.You are also advised to avoid isolation,exercise regularly,
+         hold of from making big decisions and talk to people and things will be better with time.  
+       </p>
+       <h5>Your score was {{index}}</h5>
+       Your score suggests that you may be experiencing some symptoms of mild depression.While your symptoms
+           are likely not having a minor impact on your life,it is important to monitor them.If you have been mildly
+           depressed for a period of a few months,consider talking to a therapist for treament.
+     </div>
+     {%endif%}
+     {% endif %} 
+     {%if result == '0' %}
+       {%if index >= '60' and index <= '69' %}
+     <div>
+       <h5>Model Results</h5><br>
+       <p>From the questionnaire you have completed,our model shows that you would not look for treatment 
+         when faced with a mental health issue.Mental health issues especially depression is a treatable condition
+         with an excellrnt treatment rate especially in this century.We understand when in this situationasking for
+         help can be a tedious task.First step which is the hardest is to talk.Seek help from a therapist,a friend
+         or any other mental organization around you.You are also advised to avoid isolation,exercise regularly,
+         hold of from making big decisions and talk to people and things will be better with time.  
+       </p>
+       <h5>Your score was {{index}}</h5>
+       Your score suggests that you may be suffering from moderately severe depression.People who have scored
+           similar to you typically receive a diagnosis of major depression and have sort proffessional treatment for 
+           this disorder.It would be beneficial for you to consult a trained mental proffessional immediately.
+     </div>
+     {%endif%}
+     {% endif %} 
+     {%if result == '0' %}
+       {%if index > '70' %}
+     <div>
+       <h5>Model Results</h5><br>
+       <p>From the questionnaire you have completed,our model shows that you would not look for treatment 
+         when faced with a mental health issue.Mental health issues especially depression is a treatable condition
+         with an excellrnt treatment rate especially in this century.We understand when in this situationasking for
+         help can be a tedious task.First step which is the hardest is to talk.Seek help from a therapist,a friend
+         or any other mental organization around you.You are also advised to avoid isolation,exercise regularly,
+         hold of from making big decisions and talk to people and things will be better with time.  
+       </p>
+       <h5>Your score was {{index}}</h5>
+       Your score suggests that you may be suffering from moderately severe depression.People who have scored
+           similar to you typically receive a diagnosis of major depression and have sort proffessional treatment for 
+           this disorder.It would be beneficial for you to consult a trained mental proffessional immediately.
+     </div>
+     {%endif%}
+     {% endif %} 
+         
+        </div>
+    </div>
+  </div> 
+  
+</body>
+</html>  
